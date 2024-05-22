@@ -1,0 +1,13 @@
+@mixin color-opacity($color, $opacity, $bg: false) {
+  @if $bg {
+    background-color: rgba($color, $opacity);
+  } @else {
+    color: rgba($color, $opacity);
+  }
+}
+
+@mixin transition($transitionProperties...) {
+  transition-property: $transitionProperties;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+}

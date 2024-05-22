@@ -1,0 +1,402 @@
+[
+  {
+    "fullName": "John Smith",
+    "birthDate": "Thu Jun 08 1978 00:00:00 GMT+0000",
+    "phone": "+380123456789",
+    "email": "john.smith@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "General Practitioner",
+    "departmentId": "1"
+  },
+  {
+    "fullName": "Emily Johnson",
+    "birthDate": "Fri Apr 21 1989 00:00:00 GMT+0000",
+    "phone": "+380987654321",
+    "email": "emily.johnson@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Pediatrician",
+    "departmentId": "5"
+  },
+  {
+    "fullName": "Michael Brown",
+    "birthDate": "Wed Sep 12 1984 00:00:00 GMT+0000",
+    "phone": "+380654123987",
+    "email": "michael.brown@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Cardiologist",
+    "departmentId": "8"
+  },
+  {
+    "fullName": "Sarah Miller",
+    "birthDate": "Sun Jan 15 1975 00:00:00 GMT+0000",
+    "phone": "+380789456123",
+    "email": "sarah.miller@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Obstetrician-Gynecologist",
+    "departmentId": "4"
+  },
+  {
+    "fullName": "David Davis",
+    "birthDate": "Tue Aug 25 1981 00:00:00 GMT+0000",
+    "phone": "+380369852147",
+    "email": "david.davis@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Surgeon",
+    "departmentId": "3"
+  },
+  {
+    "fullName": "Jennifer Wilson",
+    "birthDate": "Sat Dec 05 1992 00:00:00 GMT+0000",
+    "phone": "+380852963741",
+    "email": "jennifer.wilson@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Anesthesiologist",
+    "departmentId": "3"
+  },
+  {
+    "fullName": "Christopher Taylor",
+    "birthDate": "Wed Mar 17 1982 00:00:00 GMT+0000",
+    "phone": "+380258147369",
+    "email": "christopher.taylor@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Orthopedist",
+    "departmentId": "9"
+  },
+  {
+    "fullName": "Jessica Martinez",
+    "birthDate": "Mon Jul 30 1990 00:00:00 GMT+0000",
+    "phone": "+380147258369",
+    "email": "jessica.martinez@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Neonatologist",
+    "departmentId": "6"
+  },
+  {
+    "fullName": "Daniel Garcia",
+    "birthDate": "Fri Oct 09 1987 00:00:00 GMT+0000",
+    "phone": "+380632587419",
+    "email": "daniel.garcia@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Intensivist",
+    "departmentId": "7"
+  },
+  {
+    "fullName": "Olivia Rodriguez",
+    "birthDate": "Sun May 20 1984 00:00:00 GMT+0000",
+    "phone": "+380321456987",
+    "email": "olivia.rodriguez@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Oncologist",
+    "departmentId": "10"
+  },
+  {
+    "fullName": "William Hernandez",
+    "birthDate": "Tue Feb 13 1996 00:00:00 GMT+0000",
+    "phone": "+380745896321",
+    "email": "william.hernandez@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Emergency Physician",
+    "departmentId": "1"
+  },
+  {
+    "fullName": "Ava Lopez",
+    "birthDate": "Thu Nov 24 1977 00:00:00 GMT+0000",
+    "phone": "+380159487263",
+    "email": "ava.lopez@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Obstetrician-Gynecologist",
+    "departmentId": "4"
+  },
+  {
+    "fullName": "James Gonzalez",
+    "birthDate": "Sat Jul 07 1984 00:00:00 GMT+0000",
+    "phone": "+380987654321",
+    "email": "james.gonzalez@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Pediatric Surgeon",
+    "departmentId": "5"
+  },
+  {
+    "fullName": "Mia Perez",
+    "birthDate": "Mon Dec 27 1993 00:00:00 GMT+0000",
+    "phone": "+380147258369",
+    "email": "mia.perez@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Neonatologist",
+    "departmentId": "6"
+  },
+  {
+    "fullName": "Alexander Sanchez",
+    "birthDate": "Thu Mar 30 1972 00:00:00 GMT+0000",
+    "phone": "+380632587419",
+    "email": "alexander.sanchez@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Intensivist",
+    "departmentId": "7"
+  },
+  {
+    "fullName": "Charlotte Rivera",
+    "birthDate": "Fri Oct 21 1988 00:00:00 GMT+0000",
+    "phone": "+380321456987",
+    "email": "charlotte.rivera@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Cardiologist",
+    "departmentId": "8"
+  },
+  {
+    "fullName": "Benjamin Ross",
+    "birthDate": "Thu Jun 30 1983 00:00:00 GMT+0000",
+    "phone": "+380369852147",
+    "email": "benjamin.ross@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Orthopedist",
+    "departmentId": "9"
+  },
+  {
+    "fullName": "Chloe Evans",
+    "birthDate": "Sat Apr 05 1980 00:00:00 GMT+0000",
+    "phone": "+380852963741",
+    "email": "chloe.evans@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Surgeon",
+    "departmentId": "3"
+  },
+  {
+    "fullName": "Ethan Morris",
+    "birthDate": "Thu Dec 29 1994 00:00:00 GMT+0000",
+    "phone": "+380789456123",
+    "email": "ethan.morris@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "Anesthesiologist",
+    "departmentId": "3"
+  },
+  {
+    "fullName": "Madison Cook",
+    "birthDate": "Tue Sep 04 1984 00:00:00 GMT+0000",
+    "phone": "+380654123987",
+    "email": "madison.cook@gmail.com",
+    "roleId": 2,
+    "password": "Password1!",
+    "specialty": "General Practitioner",
+    "departmentId": "1"
+  },
+  {
+    "fullName": "Emma Johnson",
+    "birthDate": "Tue Jun 08 1978 00:00:00 GMT+0000",
+    "phone": "+380123456789",
+    "email": "emma.johnson@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Noah Williams",
+    "birthDate": "Fri Apr 21 1989 00:00:00 GMT+0000",
+    "phone": "+380987654321",
+    "email": "noah.williams@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Olivia Brown",
+    "birthDate": "Wed Sep 12 1984 00:00:00 GMT+0000",
+    "phone": "+380654123987",
+    "email": "olivia.brown@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "William Miller",
+    "birthDate": "Sun Jan 15 1975 00:00:00 GMT+0000",
+    "phone": "+380789456123",
+    "email": "william.miller@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Sophia Davis",
+    "birthDate": "Tue Aug 25 1981 00:00:00 GMT+0000",
+    "phone": "+380369852147",
+    "email": "sophia.davis@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Liam Wilson",
+    "birthDate": "Sat Dec 05 1992 00:00:00 GMT+0000",
+    "phone": "+380852963741",
+    "email": "liam.wilson@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Ava Taylor",
+    "birthDate": "Wed Mar 17 1982 00:00:00 GMT+0000",
+    "phone": "+380258147369",
+    "email": "ava.taylor@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Mason Martinez",
+    "birthDate": "Mon Jul 30 1990 00:00:00 GMT+0000",
+    "phone": "+380147258369",
+    "email": "mason.martinez@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Elijah Garcia",
+    "birthDate": "Fri Oct 09 1987 00:00:00 GMT+0000",
+    "phone": "+380632587419",
+    "email": "elijah.garcia@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Charlotte Rodriguez",
+    "birthDate": "Sun May 20 1984 00:00:00 GMT+0000",
+    "phone": "+380321456987",
+    "email": "charlotte.rodriguez@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Lucas Hernandez",
+    "birthDate": "Tue Feb 13 1996 00:00:00 GMT+0000",
+    "phone": "+380745896321",
+    "email": "lucas.hernandez@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Lily Lopez",
+    "birthDate": "Thu Nov 24 1977 00:00:00 GMT+0000",
+    "phone": "+380159487263",
+    "email": "lily.lopez@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Logan Gonzalez",
+    "birthDate": "Sat Jul 07 1984 00:00:00 GMT+0000",
+    "phone": "+380987654321",
+    "email": "logan.gonzalez@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Grace Perez",
+    "birthDate": "Mon Dec 27 1993 00:00:00 GMT+0000",
+    "phone": "+380147258369",
+    "email": "grace.perez@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Henry Sanchez",
+    "birthDate": "Thu Mar 30 1972 00:00:00 GMT+0000",
+    "phone": "+380632587419",
+    "email": "henry.sanchez@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Zoey Rivera",
+    "birthDate": "Fri Oct 21 1988 00:00:00 GMT+0000",
+    "phone": "+380321456987",
+    "email": "zoey.rivera@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Jackson Ross",
+    "birthDate": "Thu Jun 30 1983 00:00:00 GMT+0000",
+    "phone": "+380369852147",
+    "email": "jackson.ross@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Sophie Evans",
+    "birthDate": "Sat Apr 05 1980 00:00:00 GMT+0000",
+    "phone": "+380852963741",
+    "email": "sophie.evans@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Benjamin Morris",
+    "birthDate": "Thu Dec 29 1994 00:00:00 GMT+0000",
+    "phone": "+380789456123",
+    "email": "benjamin.morris@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Mia Cook",
+    "birthDate": "Tue Sep 04 1984 00:00:00 GMT+0000",
+    "phone": "+380654123987",
+    "email": "mia.cook@gmail.com",
+    "roleId": 3,
+    "password": "Password1!"
+  },
+  {
+    "fullName": "Admin1",
+    "birthDate": "Tue Jun 08 1978 00:00:00 GMT+0000",
+    "phone": "+380123456789",
+    "email": "admin1@gmail.com",
+    "roleId": 1,
+    "password": "AdminPassword1!"
+  },
+  {
+    "fullName": "Admin2",
+    "birthDate": "Fri Apr 21 1989 00:00:00 GMT+0000",
+    "phone": "+380987654321",
+    "email": "admin2@gmail.com",
+    "roleId": 1,
+    "password": "AdminPassword1!"
+  },
+  {
+    "fullName": "Admin3",
+    "birthDate": "Wed Sep 12 1984 00:00:00 GMT+0000",
+    "phone": "+380654123987",
+    "email": "admin3@gmail.com",
+    "roleId": 1,
+    "password": "AdminPassword1!"
+  },
+  {
+    "fullName": "Admin4",
+    "birthDate": "Sun Jan 15 1975 00:00:00 GMT+0000",
+    "phone": "+380789456123",
+    "email": "admin4@gmail.com",
+    "roleId": 1,
+    "password": "AdminPassword1!"
+  },
+  {
+    "fullName": "Admin5",
+    "birthDate": "Tue Aug 25 1981 00:00:00 GMT+0000",
+    "phone": "+380369852147",
+    "email": "admin5@gmail.com",
+    "roleId": 1,
+    "password": "AdminPassword1!"
+  }
+],

@@ -1,0 +1,29 @@
+@import "../../index.scss";
+
+.receptions-table__nav {
+  width: max-content;
+  margin-left: auto;
+  display: flex;
+}
+
+.receptions-table__nav-tab {
+  width: 70px;
+  height: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include color-opacity($bg-forms, 0.5, true);
+  @include color-opacity($color-accent, 0.5);
+  font-size: 12px;
+  @include transition(background-color);
+
+  &:hover {
+    @include color-opacity($bg-forms, 0.8, true);
+  }
+
+  &--selected {
+    background-color: $bg-forms;
+    color: $color-accent;
+    border-top: 2px solid $color-accent;
+  }
+}

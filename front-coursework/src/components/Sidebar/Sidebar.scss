@@ -1,0 +1,107 @@
+@import "../../index.scss";
+
+.sidebar {
+  position: relative;
+  background-color: #fff;
+  width: 250px;
+  height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.sidebar__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sidebar__username {
+  margin-bottom: 2px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sidebar__useremail {
+  max-width: 155px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__userrole {
+  font-size: 13px;
+  font-weight: 600;
+  color: $color-accent-second;
+}
+
+.sidebar__logout-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 30px;
+  border-radius: 4px;
+  @include transition(background-color);
+
+  &:hover, &:focus {
+    background-color: $bg-forms;
+  }
+}
+
+.sidebar__logout-button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.sidebar__link {
+  width: 250px;
+  height: 40px;
+  padding: 10px 18px;
+  font-size: 14px;
+  color: $color-text-main;
+  @include transition(background-color);
+
+  &:hover, &:focus {
+    @include color-opacity($bg-forms, 0.4, true);
+  }
+
+  &--active {
+    background-color: $bg-forms;
+    border-right: 4px solid $color-accent;
+  }
+}
+
+.sidebar__settings-button {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  @include transition(background-color);
+
+  &:hover, &:focus {
+    background-color: $bg-forms;
+  }
+}
+
+.sidebar__settings-button-icon {
+  width: 20px;
+  height: 20px;
+}
