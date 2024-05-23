@@ -1,6 +1,6 @@
 export const usersData = [
   {
-    id: "1",
+    id: "664e255c54cf1d758f927680",
     fullName: "John Smith",
     birthDate: "Thu Jun 08 1978 00:00:00 GMT+0000",
     phone: "+380123456789",
@@ -8,10 +8,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Therapist",
-    departmentId: "2"
+    departmentId: "664e22a354cf1d758f927673"
   },
   {
-    id: "2",
+    id: "664e255c54cf1d758f927681",
     fullName: "Emily Johnson",
     birthDate: "Fri Apr 21 1989 00:00:00 GMT+0000",
     phone: "+380987654321",
@@ -19,10 +19,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Pediatrician",
-    departmentId: "5"
+    departmentId: "664e22a354cf1d758f927676"
   },
   {
-    id: "3",
+    id: "664e255c54cf1d758f927682",
     fullName: "Michael Brown",
     birthDate: "Wed Sep 12 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
@@ -30,10 +30,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Cardiologist",
-    departmentId: "8"
+    departmentId: "664e22a354cf1d758f927679"
   },
   {
-    id: "4",
+    id: "664e255c54cf1d758f927683",
     fullName: "Sarah Miller",
     birthDate: "Sun Jan 15 1975 00:00:00 GMT+0000",
     phone: "+380789456123",
@@ -41,10 +41,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Gynecologist",
-    departmentId: "4"
+    departmentId: "664e22a354cf1d758f927675"
   },
   {
-    id: "5",
+    id: "664e255c54cf1d758f927684",
     fullName: "David Davis",
     birthDate: "Tue Aug 25 1981 00:00:00 GMT+0000",
     phone: "+380369852147",
@@ -52,10 +52,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Neurosurgeon",
-    departmentId: "3"
+    departmentId: "664e22a354cf1d758f927674"
   },
   {
-    id: "6",
+    id: "664e255c54cf1d758f927685",
     fullName: "Jennifer Wilson",
     birthDate: "Sat Dec 05 1992 00:00:00 GMT+0000",
     phone: "+380852963741",
@@ -63,10 +63,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Allergist",
-    departmentId: "1"
+    departmentId: "664e22a354cf1d758f927672"
   },
   {
-    id: "7",
+    id: "664e255c54cf1d758f927686",
     fullName: "Christopher Taylor",
     birthDate: "Wed Mar 17 1982 00:00:00 GMT+0000",
     phone: "+380258147369",
@@ -74,10 +74,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Allergist",
-    departmentId: "1"
+    departmentId: "664e22a354cf1d758f927672"
   },
   {
-    id: "8",
+    id: "664e255c54cf1d758f927687",
     fullName: "Jessica Martinez",
     birthDate: "Mon Jul 30 1990 00:00:00 GMT+0000",
     phone: "+380147258369",
@@ -85,10 +85,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Pediatrician",
-    departmentId: "5"
+    departmentId: "664e22a354cf1d758f927676"
   },
   {
-    id: "9",
+    id: "664e255c54cf1d758f927688",
     fullName: "Daniel Garcia",
     birthDate: "Fri Oct 09 1987 00:00:00 GMT+0000",
     phone: "+380632587419",
@@ -96,10 +96,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Traumatologist",
-    departmentId: "6"
+    departmentId: "664e22a354cf1d758f927677"
   },
   {
-    id: "10",
+    id: "664e255c54cf1d758f927689",
     fullName: "Olivia Rodriguez",
     birthDate: "Sun May 20 1984 00:00:00 GMT+0000",
     phone: "+380321456987",
@@ -107,10 +107,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Traumatologist",
-    departmentId: "6"
+    departmentId: "664e22a354cf1d758f927677"
   },
   {
-    id: "11",
+    id: "664e255c54cf1d758f92768a",
     fullName: "William Hernandez",
     birthDate: "Tue Feb 13 1996 00:00:00 GMT+0000",
     phone: "+380745896321",
@@ -118,10 +118,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Rehabilitologist",
-    departmentId: "7"
+    departmentId: "664e22a354cf1d758f927678"
   },
   {
-    id: "12",
+    id: "664e255c54cf1d758f92768b",
     fullName: "Ava Lopez",
     birthDate: "Thu Nov 24 1977 00:00:00 GMT+0000",
     phone: "+380159487263",
@@ -129,10 +129,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Gynecologist",
-    departmentId: "4"
+    departmentId: "664e22a354cf1d758f927675"
   },
   {
-    id: "13",
+    id: "664e255c54cf1d758f92768c",
     fullName: "James Gonzalez",
     birthDate: "Sat Jul 07 1984 00:00:00 GMT+0000",
     phone: "+380987654321",
@@ -140,10 +140,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Vascular surgeon",
-    departmentId: "3"
+    departmentId: "664e22a354cf1d758f927674"
   },
   {
-    id: "14",
+    id: "664e255c54cf1d758f92768d",
     fullName: "Mia Perez",
     birthDate: "Mon Dec 27 1993 00:00:00 GMT+0000",
     phone: "+380147258369",
@@ -151,10 +151,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Rehabilitation instructor",
-    departmentId: "7"
+    departmentId: "664e22a354cf1d758f927678"
   },
   {
-    id: "15",
+    id: "664e255c54cf1d758f92768e",
     fullName: "Alexander Sanchez",
     birthDate: "Thu Mar 30 1972 00:00:00 GMT+0000",
     phone: "+380632587419",
@@ -162,10 +162,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Rehabilitation instructor",
-    departmentId: "7"
+    departmentId: "664e22a354cf1d758f927678"
   },
   {
-    id: "16",
+    id: "664e255c54cf1d758f92768f",
     fullName: "Charlotte Rivera",
     birthDate: "Fri Oct 21 1988 00:00:00 GMT+0000",
     phone: "+380321456987",
@@ -173,10 +173,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Cardiologist",
-    departmentId: "8"
+    departmentId: "664e22a354cf1d758f927679"
   },
   {
-    id: "17",
+    id: "664e255c54cf1d758f927690",
     fullName: "Benjamin Ross",
     birthDate: "Thu Jun 30 1983 00:00:00 GMT+0000",
     phone: "+380369852147",
@@ -184,10 +184,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Infectionist",
-    departmentId: "9"
+    departmentId: "664e22a354cf1d758f92767a"
   },
   {
-    id: "18",
+    id: "664e255c54cf1d758f927691",
     fullName: "Chloe Evans",
     birthDate: "Sat Apr 05 1980 00:00:00 GMT+0000",
     phone: "+380852963741",
@@ -195,10 +195,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Cardiac surgeon",
-    departmentId: "3"
+    departmentId: "664e22a354cf1d758f927674"
   },
   {
-    id: "19",
+    id: "664e255c54cf1d758f927692",
     fullName: "Ethan Morris",
     birthDate: "Thu Dec 29 1994 00:00:00 GMT+0000",
     phone: "+380789456123",
@@ -206,10 +206,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Abdominal surgeon",
-    departmentId: "3"
+    departmentId: "664e22a354cf1d758f927674"
   },
   {
-    id: "20",
+    id: "664e255c54cf1d758f927693",
     fullName: "Madison Cook",
     birthDate: "Tue Sep 04 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
@@ -217,10 +217,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Infectionist",
-    departmentId: "9"
+    departmentId: "664e22a354cf1d758f92767a"
   },
   {
-    id: "47",
+    id: "664e255c54cf1d758f927694",
     fullName: "Alexander Knox",
     birthDate: "Thu Jun 08 1978 00:00:00 GMT+0000",
     phone: "+380123456789",
@@ -228,10 +228,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Therapist",
-    departmentId: "2"
+    departmentId: "664e22a354cf1d758f927673"
   },
   {
-    id: "48",
+    id: "664e255c54cf1d758f927695",
     fullName: "Emely Bell",
     birthDate: "Tue Sep 04 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
@@ -239,10 +239,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Dermatologist",
-    departmentId: "10"
+    departmentId: "664e22a354cf1d758f92767b"
   },
   {
-    id: "49",
+    id: "664e255c54cf1d758f927696",
     fullName: "Fatima Sherman",
     birthDate: "Tue Sep 04 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
@@ -250,10 +250,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Dermatologist",
-    departmentId: "10"
+    departmentId: "664e22a354cf1d758f92767b"
   },
   {
-    id: "50",
+    id: "664e255c54cf1d758f927697",
     fullName: "Michael Yoder",
     birthDate: "Tue Sep 04 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
@@ -261,10 +261,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Nurse",
-    departmentId: "11"
+    departmentId: "664e22a354cf1d758f92767c"
   },
   {
-    id: "51",
+    id: "664e255c54cf1d758f927698",
     fullName: "Mya Reed",
     birthDate: "Tue Sep 04 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
@@ -272,10 +272,10 @@ export const usersData = [
     roleId: 2,
     password: "Password1!",
     specialty: "Nurse",
-    departmentId: "11"
+    departmentId: "664e22a354cf1d758f92767c"
   },
   {
-    id: "21",
+    id: "664e255c54cf1d758f927699",
     fullName: "Emma Johnson",
     birthDate: "Tue Jun 08 1978 00:00:00 GMT+0000",
     phone: "+380123456789",
@@ -284,7 +284,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "22",
+    id: "664e255c54cf1d758f92769a",
     fullName: "Noah Williams",
     birthDate: "Fri Apr 21 1989 00:00:00 GMT+0000",
     phone: "+380987654321",
@@ -293,7 +293,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "23",
+    id: "664e255c54cf1d758f92769b",
     fullName: "Olivia Brown",
     birthDate: "Wed Sep 12 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
@@ -302,7 +302,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "24",
+    id: "664e255c54cf1d758f92769c",
     fullName: "William Miller",
     birthDate: "Sun Jan 15 1975 00:00:00 GMT+0000",
     phone: "+380789456123",
@@ -311,7 +311,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "25",
+    id: "664e255c54cf1d758f92769d",
     fullName: "Sophia Davis",
     birthDate: "Tue Aug 25 1981 00:00:00 GMT+0000",
     phone: "+380369852147",
@@ -320,7 +320,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "26",
+    id: "664e255c54cf1d758f92769e",
     fullName: "Liam Wilson",
     birthDate: "Sat Dec 05 1992 00:00:00 GMT+0000",
     phone: "+380852963741",
@@ -329,7 +329,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "27",
+    id: "664e255c54cf1d758f92769f",
     fullName: "Ava Taylor",
     birthDate: "Wed Mar 17 1982 00:00:00 GMT+0000",
     phone: "+380258147369",
@@ -338,7 +338,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "28",
+    id: "664e255c54cf1d758f9276a0",
     fullName: "Mason Martinez",
     birthDate: "Mon Jul 30 1990 00:00:00 GMT+0000",
     phone: "+380147258369",
@@ -347,7 +347,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "29",
+    id: "664e255c54cf1d758f9276a1",
     fullName: "Elijah Garcia",
     birthDate: "Fri Oct 09 1987 00:00:00 GMT+0000",
     phone: "+380632587419",
@@ -356,7 +356,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "30",
+    id: "664e255c54cf1d758f9276a2",
     fullName: "Charlotte Rodriguez",
     birthDate: "Sun May 20 1984 00:00:00 GMT+0000",
     phone: "+380321456987",
@@ -365,7 +365,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "31",
+    id: "664e255c54cf1d758f9276a3",
     fullName: "Lucas Hernandez",
     birthDate: "Tue Feb 13 1996 00:00:00 GMT+0000",
     phone: "+380745896321",
@@ -374,7 +374,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "32",
+    id: "664e255c54cf1d758f9276a4",
     fullName: "Lily Lopez",
     birthDate: "Thu Nov 24 1977 00:00:00 GMT+0000",
     phone: "+380159487263",
@@ -383,7 +383,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "33",
+    id: "664e255c54cf1d758f9276a5",
     fullName: "Logan Gonzalez",
     birthDate: "Sat Jul 07 1984 00:00:00 GMT+0000",
     phone: "+380987654321",
@@ -392,7 +392,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "34",
+    id: "664e255c54cf1d758f9276a6",
     fullName: "Grace Perez",
     birthDate: "Mon Dec 27 1993 00:00:00 GMT+0000",
     phone: "+380147258369",
@@ -401,7 +401,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "35",
+    id: "664e255c54cf1d758f9276a7",
     fullName: "Henry Sanchez",
     birthDate: "Thu Mar 30 1972 00:00:00 GMT+0000",
     phone: "+380632587419",
@@ -410,7 +410,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "36",
+    id: "664e255c54cf1d758f9276a8",
     fullName: "Zoey Rivera",
     birthDate: "Fri Oct 21 1988 00:00:00 GMT+0000",
     phone: "+380321456987",
@@ -419,7 +419,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "37",
+    id: "664e255c54cf1d758f9276a9",
     fullName: "Jackson Ross",
     birthDate: "Thu Jun 30 1983 00:00:00 GMT+0000",
     phone: "+380369852147",
@@ -428,7 +428,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "38",
+    id: "664e255c54cf1d758f9276aa",
     fullName: "Sophie Evans",
     birthDate: "Sat Apr 05 1980 00:00:00 GMT+0000",
     phone: "+380852963741",
@@ -437,7 +437,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "39",
+    id: "664e255c54cf1d758f9276ab",
     fullName: "Benjamin Morris",
     birthDate: "Thu Dec 29 1994 00:00:00 GMT+0000",
     phone: "+380789456123",
@@ -446,7 +446,7 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "40",
+    id: "664e255c54cf1d758f9276ac",
     fullName: "Mia Cook",
     birthDate: "Tue Sep 04 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
@@ -455,47 +455,47 @@ export const usersData = [
     password: "Password1!"
   },
   {
-    id: "41",
-    fullName: "Admin1",
+    id: "664e255c54cf1d758f9276ad",
+    fullName: "Zora Thompson",
     birthDate: "Tue Jun 08 1978 00:00:00 GMT+0000",
     phone: "+380123456789",
-    email: "admin1@gmail.com",
+    email: "zora.thompson@gmail.com",
     roleId: 1,
     password: "AdminPassword1!"
   },
   {
-    id: "42",
-    fullName: "Admin2",
+    id: "664e255c54cf1d758f9276ae",
+    fullName: "Emerie Jarvis",
     birthDate: "Fri Apr 21 1989 00:00:00 GMT+0000",
     phone: "+380987654321",
-    email: "admin2@gmail.com",
+    email: "emerie.jarvis@gmail.com",
     roleId: 1,
     password: "AdminPassword1!"
   },
   {
-    id: "43",
-    fullName: "Admin3",
+    id: "664e255c54cf1d758f9276af",
+    fullName: "Daniela Smith",
     birthDate: "Wed Sep 12 1984 00:00:00 GMT+0000",
     phone: "+380654123987",
-    email: "admin3@gmail.com",
+    email: "daniela.smith@gmail.com",
     roleId: 1,
     password: "AdminPassword1!"
   },
   {
-    id: "44",
-    fullName: "Admin4",
+    id: "664e255c54cf1d758f9276b0",
+    fullName: "Jacob Harris",
     birthDate: "Sun Jan 15 1975 00:00:00 GMT+0000",
     phone: "+380789456123",
-    email: "admin4@gmail.com",
+    email: "jacob.harris@gmail.com",
     roleId: 1,
     password: "AdminPassword1!"
   },
   {
-    id: "45",
-    fullName: "Admin5",
+    id: "664e255c54cf1d758f9276b1",
+    fullName: "Nathaniel Morris",
     birthDate: "Tue Aug 25 1981 00:00:00 GMT+0000",
     phone: "+380369852147",
-    email: "admin5@gmail.com",
+    email: "nathaniel.morris@gmail.com",
     roleId: 1,
     password: "AdminPassword1!"
   }
@@ -657,114 +657,234 @@ export const receptionsTabs = [
 
 export const receptionsData = [
   {
-    id: "1",
-    patientId: "30",
-    doctorId: "1",
-    date: "2024-05-10T08:00:00",
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927680",
+    date: "2024-03-11T10:00:00",
     serviceIds: [],
-    diagnosis: "Neurological disorder",
-    recommendations: "Get adequate sleep and manage stress levels.",
+    diagnosis: "Hypertension",
+    recommendations: "",
     status: "done"
   },
   {
-    id: "2",
-    patientId: "25",
-    doctorId: "16",
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927681",
     date: "2024-05-11T09:00:00",
     serviceIds: [],
+    diagnosis: "Asthma",
+    recommendations: "",
+    status: "paid"
+  },
+  {
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927688",
+    date: "2024-05-11T09:00:00",
+    serviceIds: [],
+    diagnosis: "Muscle Strains",
+    recommendations: "",
+    status: "paid"
+  },
+  {
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927680",
+    date: "2024-05-10T12:00:00",
+    serviceIds: [],
     diagnosis: "Hypertension",
-    recommendations: "Maintain a healthy diet and exercise regularly.",
+    recommendations: "",
+    status: "paid"
+  },
+  {
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927694",
+    date: "2024-01-04T13:00:00",
+    serviceIds: [],
+    diagnosis: "Hypertension",
+    recommendations: "",
+    status: "paid"
+  },
+  {
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927680",
+    date: "2024-05-10T16:00:00",
+    serviceIds: [],
+    diagnosis: "Hypertension",
+    recommendations: "",
+    status: "paid"
+  },
+  {
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f92768e",
+    date: "2024-05-11T09:00:00",
+    serviceIds: [],
+    diagnosis: "Cardiac Rehabilitation Exercises",
+    recommendations: "",
+    status: "done"
+  },
+  {
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927696",
+    date: "2024-05-11T09:00:00",
+    serviceIds: [],
+    diagnosis: "Psoriasis",
+    recommendations: "",
+    status: "paid"
+  },
+  {
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927696",
+    date: "2024-06-21T09:00:00",
+    serviceIds: [],
+    diagnosis: "",
+    recommendations: "",
     status: "booked"
   },
   {
-    id: "3",
-    patientId: "21",
-    doctorId: "19",
-    date: "2024-05-12T10:00:00",
+    id: "699",
+    patientId: "664e255c54cf1d758f927699",
+    doctorId: "664e255c54cf1d758f927696",
+    date: "2024-05-11T09:00:00",
     serviceIds: [],
-    diagnosis: "Musculoskeletal injury",
-    recommendations: "Apply ice packs and avoid strenuous activities.",
+    diagnosis: "",
+    recommendations: "",
+    status: "booked"
+  }, //1
+  {
+    id: "69a",
+    patientId: "664e255c54cf1d758f92769a",
+    doctorId: "664e255c54cf1d758f927692", //abdominal sur
+    date: "2024-05-31T10:00:00",
+    serviceIds: [],
+    diagnosis: "",
+    recommendations: "",
+    status: "booked"
+  },
+  {
+    id: "69a",
+    patientId: "664e255c54cf1d758f92769a",
+    doctorId: "664e255c54cf1d758f927680",
+    date: "2024-05-12T08:00:00",
+    serviceIds: [],
+    diagnosis: "",
+    recommendations: "",
+    status: "booked"
+  },
+  {
+    id: "69a",
+    patientId: "664e255c54cf1d758f92769a",
+    doctorId: "664e255c54cf1d758f927693",
+    date: "2024-05-30T09:00:00",
+    serviceIds: [],
+    diagnosis: "",
+    recommendations: "",
+    status: "booked"
+  },
+  {
+    id: "69a",
+    patientId: "664e255c54cf1d758f92769a",
+    doctorId: "664e255c54cf1d758f927690",
+    date: "2024-05-12T15:00:00",
+    serviceIds: [],
+    diagnosis: "Hepatitis B",
+    recommendations: "Operation is needed",
     status: "done"
   },
   {
-    id: "4",
-    patientId: "24",
-    doctorId: "7",
+    id: "69a",
+    patientId: "664e255c54cf1d758f92769a",
+    doctorId: "664e255c54cf1d758f927680",
+    date: "2024-05-15T10:00:00",
+    serviceIds: [],
+    diagnosis: "Malaria",
+    recommendations: "",
+    status: "paid"
+  },//2
+  {
+    id: "69b",
+    patientId: "664e255c54cf1d758f92769b",
+    doctorId: "664e255c54cf1d758f92768b",
     date: "2024-05-13T11:00:00",
     serviceIds: [],
-    diagnosis: "Respiratory infection",
-    recommendations: "Rest at home and drink plenty of fluids.",
+    diagnosis: "Hormonal failure",
+    recommendations: "Take blood test and take pills.",
     status: "paid"
   },
   {
-    id: "5",
-    patientId: "29",
-    doctorId: "6",
+    id: "69c",
+    patientId: "664e255c54cf1d758f92769c",
+    doctorId: "664e255c54cf1d758f927691",
     date: "2024-04-14T12:00:00",
     serviceIds: [],
-    diagnosis: "Gastric ulcer",
-    recommendations: "Follow a bland diet and avoid spicy foods.",
-    status: "paid"
+    diagnosis: "Surgery is needed",
+    recommendations: "",
+    status: "done"
   },
   {
-    id: "6",
-    patientId: "23",
-    doctorId: "28",
+    id: "69d",
+    patientId: "664e255c54cf1d758f92769d",
+    doctorId: "664e255c54cf1d758f927693",
     date: "2024-05-15T13:00:00",
     serviceIds: [],
     diagnosis: "Skin infection",
     recommendations: "Use a gentle cleanser and moisturizer.",
-    status: "done"
+    status: "paid"
   },
   {
-    id: "7",
-    patientId: "26",
-    doctorId: "10",
+    id: "69d",
+    patientId: "664e255c54cf1d758f92769d",
+    doctorId: "664e255c54cf1d758f927681",
     date: "2024-05-16T14:00:00",
     serviceIds: [],
     diagnosis: "Eye disorder",
-    recommendations: "Wear sunglasses outdoors and take regular breaks from screen time.",
+    recommendations: "Take regular breaks from screen time.",
     status: "booked"
   },
   {
-    id: "8",
-    patientId: "22",
-    doctorId: "8",
-    date: "2024-05-17T15:00:00",
+    id: "69e",
+    patientId: "664e255c54cf1d758f92769e",
+    doctorId: "664e255c54cf1d758f927682",
+    date: "2024-05-24T15:00:00",
     serviceIds: [],
-    diagnosis: "Cardiovascular disease",
-    recommendations: "Maintain a healthy diet and exercise regimen.",
+    diagnosis: "Cardiomyopathy",
+    recommendations: "Reduce physical activity and take medication.",
     status: "done"
   },
   {
-    id: "9",
-    patientId: "28",
-    doctorId: "5",
+    id: "69f",
+    patientId: "664e255c54cf1d758f92769f",
+    doctorId: "664e255c54cf1d758f927685",
     date: "2024-05-18T16:00:00",
     serviceIds: [],
-    diagnosis: "Pediatric ailment",
-    recommendations: "Administer prescribed medication and monitor symptoms closely.",
-    status: "done"
+    diagnosis: "Seasonal allergy",
+    recommendations: "Take medications.",
+    status: "paid"
   },
   {
-    id: "10",
-    patientId: "27",
-    doctorId: "12",
-    date: "2024-05-19T08:00:00",
+    id: "6a0",
+    patientId: "664e255c54cf1d758f927",
+    doctorId: "664e255c54cf1d758f927688",
+    date: "2024-05-31T08:00:00",
     serviceIds: [],
     diagnosis: "Malnutrition",
     recommendations: "Follow a balanced diet plan and stay hydrated.",
-    status: "done"
+    status: "booked"
   },
   {
-    id: "11",
-    patientId: "27",
-    doctorId: "1",
+    id: "6a2",
+    patientId: "664e255c54cf1d758f9276a2",
+    doctorId: "664e255c54cf1d758f927683",
     date: "2024-05-20T08:00:00",
     serviceIds: [],
-    diagnosis: "Neurological disorder",
-    recommendations: "Get adequate sleep and manage stress levels.",
-    status: "booked"
+    diagnosis: "Menstrual Disorders",
+    recommendations: "Rest and take medications.",
+    status: "paid"
   },
   {
     id: "12",
@@ -856,4 +976,205 @@ export const receptionsData = [
     recommendations: "Follow a balanced diet plan and stay hydrated.",
     status: "done"
   },
+]
+
+export const equipmentData = [
+  {
+    "id": "664e514a54cf1d758f9276b8",
+    "name": "Skin Prick Test Kit",
+    "cost": 300,
+    "department": "664e22a354cf1d758f927672"
+  },
+  {
+    "id": "664e514a54cf1d758f9276b9",
+    "name": "Spirometer",
+    "cost": 1500,
+    "department": "664e22a354cf1d758f927672"
+  },
+  {
+    "id": "664e514a54cf1d758f9276ba",
+    "name": "Nebulizer",
+    "cost": 200,
+    "department": "664e22a354cf1d758f927672"
+  },
+  {
+    "id": "664e514a54cf1d758f9276bb",
+    "name": "Blood Pressure Monitor",
+    "cost": 100,
+    "department": "664e22a354cf1d758f927673"
+  },
+  {
+    "id": "664e514a54cf1d758f9276bc",
+    "name": "ECG Machine",
+    "cost": 1200,
+    "department": "664e22a354cf1d758f927673"
+  },
+  {
+    "id": "664e514a54cf1d758f9276bd",
+    "name": "Stethoscope",
+    "cost": 150,
+    "department": "664e22a354cf1d758f927673"
+  },
+  {
+    "id": "664e514a54cf1d758f9276be",
+    "name": "Surgical Table",
+    "cost": 5000,
+    "department": "664e22a354cf1d758f927674"
+  },
+  {
+    "id": "664e514a54cf1d758f9276bf",
+    "name": "Anesthesia Machine",
+    "cost": 12000,
+    "department": "664e22a354cf1d758f927674"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c0",
+    "name": "Electrosurgical Unit",
+    "cost": 2500,
+    "department": "664e22a354cf1d758f927674"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c1",
+    "name": "Ultrasound Machine",
+    "cost": 20000,
+    "department": "664e22a354cf1d758f927675"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c2",
+    "name": "Colposcope",
+    "cost": 6000,
+    "department": "664e22a354cf1d758f927675"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c3",
+    "name": "Fetal Monitor",
+    "cost": 2500,
+    "department": "664e22a354cf1d758f927675"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c4",
+    "name": "Pediatric Stethoscope",
+    "cost": 120,
+    "department": "664e22a354cf1d758f927676"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c5",
+    "name": "Infant Warmer",
+    "cost": 3000,
+    "department": "664e22a354cf1d758f927676"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c6",
+    "name": "Pediatric Ventilator",
+    "cost": 8000,
+    "department": "664e22a354cf1d758f927676"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c7",
+    "name": "X-ray Machine",
+    "cost": 10000,
+    "department": "664e22a354cf1d758f927677"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c8",
+    "name": "Trauma Stretcher",
+    "cost": 1500,
+    "department": "664e22a354cf1d758f927677"
+  },
+  {
+    "id": "664e514a54cf1d758f9276c9",
+    "name": "Orthopedic Drill",
+    "cost": 2000,
+    "department": "664e22a354cf1d758f927677"
+  },
+  {
+    "id": "664e514a54cf1d758f9276ca",
+    "name": "Treadmill",
+    "cost": 3000,
+    "department": "664e22a354cf1d758f927678"
+  },
+  {
+    "id": "664e514a54cf1d758f9276cb",
+    "name": "Hydrotherapy Pool",
+    "cost": 25000,
+    "department": "664e22a354cf1d758f927678"
+  },
+  {
+    "id": "664e514a54cf1d758f9276cc",
+    "name": "Exercise Bike",
+    "cost": 1200,
+    "department": "664e22a354cf1d758f927678"
+  },
+  {
+    "id": "664e514a54cf1d758f9276cd",
+    "name": "ECG Machine",
+    "cost": 1200,
+    "department": "664e22a354cf1d758f927679"
+  },
+  {
+    "id": "664e514a54cf1d758f9276ce",
+    "name": "Defibrillator",
+    "cost": 2000,
+    "department": "664e22a354cf1d758f927679"
+  },
+  {
+    "id": "664e514a54cf1d758f9276cf",
+    "name": "Holter Monitor",
+    "cost": 1500,
+    "department": "664e22a354cf1d758f927679"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d0",
+    "name": "Biosafety Cabinet",
+    "cost": 8000,
+    "department": "664e22a354cf1d758f92767a"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d1",
+    "name": "Autoclave",
+    "cost": 5000,
+    "department": "664e22a354cf1d758f92767a"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d2",
+    "name": "PCR Machine",
+    "cost": 15000,
+    "department": "664e22a354cf1d758f92767a"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d3",
+    "name": "Dermatoscope",
+    "cost": 500,
+    "department": "664e22a354cf1d758f92767b"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d4",
+    "name": "Laser Therapy Machine",
+    "cost": 10000,
+    "department": "664e22a354cf1d758f92767b"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d5",
+    "name": "Phototherapy Unit",
+    "cost": 6000,
+    "department": "664e22a354cf1d758f92767b"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d6",
+    "name": "Centrifuge",
+    "cost": 3000,
+    "department": "664e22a354cf1d758f92767c"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d7",
+    "name": "Microscope",
+    "cost": 2000,
+    "department": "664e22a354cf1d758f92767c"
+  },
+  {
+    "id": "664e514a54cf1d758f9276d8",
+    "name": "Blood Analyzer",
+    "cost": 15000,
+    "department": "664e22a354cf1d758f92767c"
+  }
 ]

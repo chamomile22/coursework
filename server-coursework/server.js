@@ -1,26 +1,19 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const HttpError = require("./HttpError");
-const { MongoClient, ObjectId } = require("mongodb");
+
 const { exec } = require('child_process');
 
 const app = express();
 const port = 3001;
-const connectUrl = 'mongodb+srv://yanaibabak:h62B7BtPJ77reuT8@cluster0.jcntvne.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const connectUrl = 'mongodb://yanaibabak:h62B7BtPJ77reuT8>@cluster0.jcntvne.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 let db;
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-MongoClient.connect(connectUrl).then((client) => {
-  console.log('Connection successful!');
-  db = client.db('medical_center');
-  return app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
-}).catch(error => {
-  console.log('Connection error: ', error.message);
-})
+mongoose.connect(connectUrl)
 
 app.get('/users',
   async (req, res) => {
