@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts", "migrate-mongo-config.ts", "migrations"],
+  "compilerOptions": {
+    "noEmit": false,
+    "sourceMap": true,
+    "incremental": true,
+    "outDir": "./dist"
+  }
+}
