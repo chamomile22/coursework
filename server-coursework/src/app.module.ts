@@ -15,6 +15,7 @@ import { MONGOOSE_CONFIG } from "./database";
 import { AuthModule } from "./modules/auth";
 import { DepartmentsModule } from "./modules/departments";
 import { EquipmentModule } from "./modules/equipment";
+import { ServicesModule } from "./modules/services";
 import { UsersModule } from "./modules/users";
 
 @Module({
@@ -23,6 +24,7 @@ import { UsersModule } from "./modules/users";
     DepartmentsModule,
     UsersModule,
     EquipmentModule,
+    ServicesModule,
     ConfigModule,
     LoggerModule,
     ContextModule,
