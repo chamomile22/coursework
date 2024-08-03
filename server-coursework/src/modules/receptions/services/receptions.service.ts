@@ -1,0 +1,139 @@
+import { Injectable } from "@nestjs/common";
+import { InjectModel } from "@nestjs/mongoose";
+import { DateTime } from "luxon";
+import { FilterQuery, Model, PipelineStage, Types } from "mongoose";
+import { ConfigService } from "../../../config";
+import { CreateReceptionDto, UpdateReceptionDto, GetAllReceptionsDto } from "../dto";
+import { ReceptionDocument, ReceptionEntity } from "../schemas";
+
+@Injectable()
+export class ReceptionsService {
+
+  constructor(
+    @InjectModel(ReceptionEntity.name)
+    private readonly receptionModel: Model<ReceptionEntity>,
+    private readonly configService: ConfigService,
+  ) {}
+
+  async create(data: CreateReceptionDto): Promise<ReceptionDocument> {
+    const { serviceIds, ...restParams } = data;
+
+    if (serviceIds) {
+      const ids = serviceIds.map(item => new Types.ObjectId(item));
+      return await this.receptionModel.create({ serviceIds: ids, ...restParams });
+    }
+
+
+    return this.receptionModel.create(restParams);
+  }
+
+  private generateAggregationPipelines(params: GetAllReceptionsDto): PipelineStage[] {
+    const { filter, sort } = params;
+
+    const aggregationPipelines: PipelineStage[] = [];
+    if (filter?.date) {
+      const start = DateTime.fromJSDate(filter.date).startOf("day").toISODate();
+      const end = DateTime.fromJSDate(filter.date).endOf("day").toISODate();
+
+      aggregationPipelines.push({
+        $match: {
+          date: { $gte: start, $lte: end },
+        },
+      });
+    }
+
+    if (filter?.departmentId) {
+      aggregationPipelines.push(...[{
+        $lookup: {
+          localField: "doctorId",
+          foreignField: "_id",
+          from: "users",
+          as: "doctor",
+        },
+      },
+        { $match: { "doctor.departmentId": filter.departmentId } },
+      ]);
+    }
+
+    if (sort) {
+      aggregationPipelines.push({
+        $sort: sort,
+      });
+    }
+
+    return aggregationPipelines;
+  }
+
+  async getAll(params: GetAllReceptionsDto): Promise<ReceptionDocument[]> {
+
+    const aggregationPipelines = this.generateAggregationPipelines(params);
+
+    return await this.receptionModel
+      .aggregate(aggregationPipelines);
+  }
+
+  async getFreeDates(pickedDate: Date): Promise<Date[]> {
+    const { start: startHour, end: endHour } = this.configService.workHours;
+
+    const startDate = DateTime.fromJSDate(pickedDate).set({
+      hour: startHour,
+      minute: 0,
+      second: 0,
+      millisecond: 0,
+    }).toJSDate();
+
+    const endDate = DateTime.fromJSDate(pickedDate).set({
+      hour: endHour,
+      minute: 0,
+      second: 0,
+      millisecond: 0,
+    }).toJSDate();
+
+    const foundReceptions = await this.receptionModel.find({ date: { $gte: startDate, $lte: endDate } });
+
+    const existingHours = new Set<number>();
+    for await (const foundReception of foundReceptions) {
+      const date = foundReception.date;
+
+      existingHours.add(date.getHours());
+    }
+
+    const results: Date[] = [];
+    for (let hour = startHour; hour < endHour; hour += 1) {
+      if (!existingHours.has(hour)) {
+        results.push(DateTime.fromJSDate(pickedDate).set({
+          hour,
+          minute: 0,
+          second: 0,
+          millisecond: 0,
+        }).toJSDate());
+      }
+    }
+
+    return results;
+  }
+
+  async updateById(id: string, data: UpdateReceptionDto): Promise<ReceptionDocument> {
+    const { serviceIds, ...restParams } = data;
+
+    if (serviceIds) {
+      const ids = serviceIds.map(item => new Types.ObjectId(item));
+      return await this.receptionModel.findByIdAndUpdate(id, { serviceIds: ids, ...restParams }, { new: true });
+    }
+
+    return await this.receptionModel.findByIdAndUpdate(id, data, { new: true });
+  }
+
+  async findById(id: string): Promise<ReceptionDocument> {
+    return await this.receptionModel.findById(id);
+  }
+
+  async findOne(data: FilterQuery<ReceptionEntity>): Promise<ReceptionDocument> {
+    return await this.receptionModel.findOne(data);
+  }
+
+  async deleteById(id: string): Promise<boolean> {
+    const result = await this.receptionModel.deleteOne({ _id: id });
+    return result.deletedCount !== 0;
+  }
+}
