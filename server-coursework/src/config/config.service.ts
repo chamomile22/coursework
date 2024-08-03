@@ -22,4 +22,9 @@ export class ConfigService extends AbstractConfigV2 {
     uri: this.getString("DB_URI"),
     name: this.getString("DB_NAME"),
   };
+
+  readonly workHours = {
+    start: this.getNumber("START_WORK_HOUR"),
+    end: this.getNumber("END_WORK_HOUR"),
+  };
 }
