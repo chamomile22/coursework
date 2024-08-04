@@ -2,7 +2,9 @@ import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { DateTime } from "luxon";
 import { FilterQuery, Model, PipelineStage, Types } from "mongoose";
+import { ServiceException } from "../../../common/exceptions";
 import { ConfigService } from "../../../config";
+import { ServicesService } from "../../services/services";
 import { CreateReceptionDto, UpdateReceptionDto, GetAllReceptionsDto } from "../dto";
 import { ReceptionDocument, ReceptionEntity } from "../schemas";
 
@@ -12,19 +14,39 @@ export class ReceptionsService {
   constructor(
     @InjectModel(ReceptionEntity.name)
     private readonly receptionModel: Model<ReceptionEntity>,
+    private readonly servicesService: ServicesService,
     private readonly configService: ConfigService,
   ) {}
 
-  async create(data: CreateReceptionDto): Promise<ReceptionDocument> {
-    const { serviceIds, ...restParams } = data;
+  private async verifyDate(date: Date): Promise<void> {
+    const receptionExists = !!(await this.receptionModel.exists({ date }));
 
-    if (serviceIds) {
-      const ids = serviceIds.map(item => new Types.ObjectId(item));
-      return await this.receptionModel.create({ serviceIds: ids, ...restParams });
+    if (receptionExists) {
+      throw new ServiceException("Reception with specified date and time already exists", "ALERADY_BOOKED", "ALREADY_EXISTS", { date });
+    }
+  }
+
+  async create(data: CreateReceptionDto): Promise<ReceptionDocument> {
+    const { serviceIds, date } = data;
+
+    let objectServiceIds: Types.ObjectId[];
+    let price = 0;
+    if (serviceIds?.length) {
+      objectServiceIds = serviceIds.map(item => new Types.ObjectId(item));
+
+      price = await this.servicesService.calculateServicesPrice(objectServiceIds);
     }
 
+    const modifiedDate = DateTime.fromJSDate(date).set({
+      hour: date.getHours(),
+      minute: 0,
+      second: 0,
+      millisecond: 0,
+    }).toJSDate();
 
-    return this.receptionModel.create(restParams);
+    await this.verifyDate(modifiedDate);
+
+    return this.receptionModel.create({ ...data, date: modifiedDate, serviceIds: objectServiceIds, price });
   }
 
   private generateAggregationPipelines(params: GetAllReceptionsDto): PipelineStage[] {
@@ -114,14 +136,34 @@ export class ReceptionsService {
   }
 
   async updateById(id: string, data: UpdateReceptionDto): Promise<ReceptionDocument> {
-    const { serviceIds, ...restParams } = data;
+    const { serviceIds, date } = data;
 
-    if (serviceIds) {
-      const ids = serviceIds.map(item => new Types.ObjectId(item));
-      return await this.receptionModel.findByIdAndUpdate(id, { serviceIds: ids, ...restParams }, { new: true });
+    let serviceObjectIds: Types.ObjectId[];
+    let price: number;
+    if (serviceIds?.length) {
+      serviceObjectIds = serviceIds.map(item => new Types.ObjectId(item));
+
+      price = await this.servicesService.calculateServicesPrice(serviceObjectIds);
     }
 
-    return await this.receptionModel.findByIdAndUpdate(id, data, { new: true });
+    let modifiedDate: Date;
+    if (date) {
+      modifiedDate = DateTime.fromJSDate(date).set({
+        hour: date.getHours(),
+        minute: 0,
+        second: 0,
+        millisecond: 0,
+      }).toJSDate();
+
+      await this.verifyDate(modifiedDate);
+    }
+
+    return await this.receptionModel.findByIdAndUpdate(id, {
+      ...data,
+      date: modifiedDate,
+      serviceIds: serviceObjectIds,
+      price,
+    }, { new: true });
   }
 
   async findById(id: string): Promise<ReceptionDocument> {

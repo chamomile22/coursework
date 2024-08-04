@@ -36,6 +36,10 @@ export class ReceptionEntity extends Model {
   @ApiProperty()
   @Prop({ required: true })
   status: string;
+
+  @ApiProperty()
+  @Prop({ required: true })
+  price: number;
 }
 
 export const ReceptionSchema = SchemaFactory.createForClass(ReceptionEntity);
