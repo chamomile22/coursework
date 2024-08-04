@@ -29,6 +29,24 @@ export class ServicesService {
     ];
   }
 
+  async calculateServicesPrice(ids: Types.ObjectId[]): Promise<number> {
+    if (!ids?.length) {
+      return 0;
+    }
+
+    const services = await this.serviceModel.aggregate<ServiceDocument>([{ $match: { _id: { $in: ids } } }, { $project: { cost: 1 } }]);
+
+    if (ids?.length > services.length) {
+      throw new ServiceException("Cannot found all services by provided ids", "NOT_FOUND", "NOT_EXISTS", { ids });
+    }
+
+    return services.reduce((result, current) => {
+      result += current.cost;
+
+      return result;
+    }, 0);
+  }
+
   async create(data: CreateServiceDto): Promise<ServiceDocument> {
     const { equipmentIds, ...restParams } = data;
 
