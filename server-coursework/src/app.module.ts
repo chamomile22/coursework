@@ -14,6 +14,7 @@ import { HttpLoggerMiddleware, LoggerModule } from "./common/logger";
 import { ConfigModule } from "./config";
 import { MONGOOSE_CONFIG } from "./database";
 import { AuthModule } from "./modules/auth";
+import { BackupsModule } from "./modules/backups";
 import { DepartmentsModule } from "./modules/departments";
 import { EquipmentModule } from "./modules/equipment";
 import { EventsModule } from "./modules/events";
@@ -34,6 +35,7 @@ import { UsersModule } from "./modules/users";
     ContextModule,
     MongooseModule.forRootAsync(MONGOOSE_CONFIG),
     EventsModule,
+    BackupsModule,
     EventEmitterModule.forRoot(
       {// set this to `true` to use wildcards
         wildcard: false,
