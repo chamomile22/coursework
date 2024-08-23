@@ -1,5 +1,6 @@
-import { Controller, Post } from "@nestjs/common";
+import { Body, Controller, Post } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
+import { BackupDto } from "../dto";
 import { BackupsService } from "../services";
 
 @ApiTags("Backups")
@@ -10,12 +11,12 @@ export class BackupsController {
   ) {}
 
   @Post("backup")
-  async backup() {
-    return await this.backupsService.backup();
+  async backup(@Body() data: BackupDto) {
+    return await this.backupsService.backup(data);
   }
 
   @Post("restore")
-  async restore() {
-    return await this.backupsService.restore();
+  async restore(@Body() data: BackupDto) {
+    return await this.backupsService.restore(data);
   }
 }

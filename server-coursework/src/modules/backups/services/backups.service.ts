@@ -1,12 +1,15 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "../../../config";
 import { LocalFileSystemDuplexConnector, MongoDBDuplexConnector, MongoTransferer } from "mongodb-snapshot";
+import { BackupDto } from "../dto";
 
 @Injectable()
 export class BackupsService {
+  private readonly defaultPath = "./backup.tar";
+
   constructor(private readonly configService: ConfigService) {}
 
-  async backup() {
+  async backup(data: BackupDto) {
     const mongoConnector = new MongoDBDuplexConnector({
       connection: {
         uri: this.configService.db.uri,
@@ -16,7 +19,7 @@ export class BackupsService {
 
     const localFileConnector = new LocalFileSystemDuplexConnector({
       connection: {
-        path: './backup.tar',
+        path: data.path ?? this.defaultPath,
       },
     });
 
@@ -30,7 +33,7 @@ export class BackupsService {
     }
   }
 
-  async restore() {
+  async restore(data: BackupDto) {
     const mongoConnector = new MongoDBDuplexConnector({
       connection: {
         uri: this.configService.db.uri,
@@ -43,7 +46,7 @@ export class BackupsService {
 
     const localFileConnector = new LocalFileSystemDuplexConnector({
       connection: {
-        path: './backup.tar',
+        path: data.path ?? this.defaultPath,
       },
     });
 
