@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
+import { EventEmitter2 } from "@nestjs/event-emitter";
 import { InjectModel } from "@nestjs/mongoose";
 import { FilterQuery, Model } from "mongoose";
+import { EventName } from "../../../common/enums";
 import { CreateEquipmentDto, GetAllEquipmentDto, UpdateEquipmentDto } from "../dto";
 import { EquipmentDocument, EquipmentEntity } from "../schemas";
 
@@ -9,10 +11,15 @@ export class EquipmentService {
   constructor(
     @InjectModel(EquipmentEntity.name)
     private readonly equipmentModel: Model<EquipmentEntity>,
+    private readonly eventEmitter: EventEmitter2,
   ) {}
 
-  async create(data: CreateEquipmentDto): Promise<EquipmentDocument> {
-    return this.equipmentModel.create(data);
+  async create(data: CreateEquipmentDto, userId: string): Promise<EquipmentDocument> {
+    const result = await this.equipmentModel.create(data);
+
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "New equipment was created" });
+
+    return result;
   }
 
   async getAll(params: GetAllEquipmentDto): Promise<EquipmentDocument[]> {
@@ -36,8 +43,12 @@ export class EquipmentService {
       .sort(sort);
   }
 
-  async updateById(id: string, data: UpdateEquipmentDto): Promise<EquipmentDocument> {
-    return await this.equipmentModel.findByIdAndUpdate(id, data, { new: true });
+  async updateById(id: string, data: UpdateEquipmentDto, userId: string): Promise<EquipmentDocument> {
+    const result = await this.equipmentModel.findByIdAndUpdate(id, data, { new: true });
+
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "Equipment was updated" });
+
+    return result;
   }
 
   async findById(id: string): Promise<EquipmentDocument> {
@@ -48,8 +59,11 @@ export class EquipmentService {
     return await this.equipmentModel.findOne(data);
   }
 
-  async deleteById(id: string): Promise<boolean> {
+  async deleteById(id: string, userId: string): Promise<boolean> {
     const result = await this.equipmentModel.deleteOne({ _id: id });
+
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "Equipment was deleted" });
+
     return result.deletedCount !== 0;
   }
 }

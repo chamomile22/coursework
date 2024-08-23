@@ -1,7 +1,9 @@
 import { Injectable } from "@nestjs/common";
+import { EventEmitter2 } from "@nestjs/event-emitter";
 import { InjectModel } from "@nestjs/mongoose";
 import { DateTime } from "luxon";
 import { FilterQuery, Model, PipelineStage, Types } from "mongoose";
+import { EventName } from "../../../common/enums";
 import { ServiceException } from "../../../common/exceptions";
 import { ConfigService } from "../../../config";
 import { ServicesService } from "../../services/services";
@@ -16,6 +18,7 @@ export class ReceptionsService {
     private readonly receptionModel: Model<ReceptionEntity>,
     private readonly servicesService: ServicesService,
     private readonly configService: ConfigService,
+    private readonly eventEmitter: EventEmitter2,
   ) {}
 
   private async verifyDate(date: Date): Promise<void> {
@@ -26,7 +29,7 @@ export class ReceptionsService {
     }
   }
 
-  async create(data: CreateReceptionDto): Promise<ReceptionDocument> {
+  async create(data: CreateReceptionDto, userId: string): Promise<ReceptionDocument> {
     const { serviceIds, date } = data;
 
     let objectServiceIds: Types.ObjectId[];
@@ -46,7 +49,11 @@ export class ReceptionsService {
 
     await this.verifyDate(modifiedDate);
 
-    return this.receptionModel.create({ ...data, date: modifiedDate, serviceIds: objectServiceIds, price });
+    const result = await this.receptionModel.create({ ...data, date: modifiedDate, serviceIds: objectServiceIds, price });
+
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "New reception was created" });
+
+    return result
   }
 
   private generateAggregationPipelines(params: GetAllReceptionsDto): PipelineStage[] {
@@ -135,7 +142,7 @@ export class ReceptionsService {
     return results;
   }
 
-  async updateById(id: string, data: UpdateReceptionDto): Promise<ReceptionDocument> {
+  async updateById(id: string, data: UpdateReceptionDto, userId: string): Promise<ReceptionDocument> {
     const { serviceIds, date } = data;
 
     let serviceObjectIds: Types.ObjectId[];
@@ -158,12 +165,17 @@ export class ReceptionsService {
       await this.verifyDate(modifiedDate);
     }
 
-    return await this.receptionModel.findByIdAndUpdate(id, {
+    const result = await this.receptionModel.findByIdAndUpdate(id, {
       ...data,
       date: modifiedDate,
       serviceIds: serviceObjectIds,
       price,
     }, { new: true });
+
+
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "Reception was updated" });
+
+    return result;
   }
 
   async findById(id: string): Promise<ReceptionDocument> {
@@ -174,8 +186,11 @@ export class ReceptionsService {
     return await this.receptionModel.findOne(data);
   }
 
-  async deleteById(id: string): Promise<boolean> {
+  async deleteById(id: string, userId: string): Promise<boolean> {
     const result = await this.receptionModel.deleteOne({ _id: id });
+
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "Reception was deleted" });
+
     return result.deletedCount !== 0;
   }
 }

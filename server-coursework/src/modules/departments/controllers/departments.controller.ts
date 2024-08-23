@@ -1,5 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
-import { ApiResponse, ApiTags } from "@nestjs/swagger";
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Headers } from "@nestjs/common";
+import {  ApiResponse, ApiTags } from "@nestjs/swagger";
 import { CreateDepartmentDto, GetAllDepartmentsDto, UpdateDepartmentDto } from "../dto";
 import { DepartmentDocument, DepartmentEntity } from "../schemas";
 import { DepartmentsService } from "../services";
@@ -7,12 +7,15 @@ import { DepartmentsService } from "../services";
 @ApiTags("Department")
 @Controller("departments")
 export class DepartmentsController {
-  constructor(private readonly departmentsService: DepartmentsService) {}
+  constructor(
+    private readonly departmentsService: DepartmentsService,
+
+  ) {}
 
   @Post()
   @ApiResponse({ status: 201, type: DepartmentEntity })
-  async create(@Body() data: CreateDepartmentDto): Promise<DepartmentDocument> {
-    return await this.departmentsService.create(data);
+  async create(@Headers("User-Id") userId: string, @Body() data: CreateDepartmentDto): Promise<DepartmentDocument> {
+    return await this.departmentsService.create(data, userId);
   }
 
   @Get(":id")
@@ -29,13 +32,13 @@ export class DepartmentsController {
 
   @Patch(":id")
   @ApiResponse({ status: 200, type: DepartmentEntity })
-  async updateDepartment(@Param("id") id: string, @Body() data: UpdateDepartmentDto): Promise<DepartmentDocument> {
-    return await this.departmentsService.updateById(id, data);
+  async updateDepartment(@Headers("User-Id") userId: string, @Param("id") id: string, @Body() data: UpdateDepartmentDto): Promise<DepartmentDocument> {
+    return await this.departmentsService.updateById(id, data, userId);
   }
 
   @Delete(":id")
   @ApiResponse({ status: 200 })
-  async deleteById(@Param("id") id: string): Promise<boolean> {
-    return await this.departmentsService.deleteById(id);
+  async deleteById(@Headers("User-Id") userId: string, @Param("id") id: string): Promise<boolean> {
+    return await this.departmentsService.deleteById(id, userId);
   }
 }

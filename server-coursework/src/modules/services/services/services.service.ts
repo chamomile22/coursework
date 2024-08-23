@@ -1,7 +1,9 @@
 import { Injectable } from "@nestjs/common";
+import { EventEmitter2 } from "@nestjs/event-emitter";
 import { InjectModel } from "@nestjs/mongoose";
 import { FilterQuery, Model, PipelineStage, Types } from "mongoose";
 import { ServiceException } from "@module/common/exceptions";
+import { EventName } from "../../../common/enums";
 import { CreateServiceDto, GetAllServicesDto, UpdateServiceDto } from "../dto";
 import { ServiceDocument, ServiceEntity } from "../schemas";
 
@@ -10,6 +12,7 @@ export class ServicesService {
   constructor(
     @InjectModel(ServiceEntity.name)
     private readonly serviceModel: Model<ServiceEntity>,
+    private readonly eventEmitter: EventEmitter2,
   ) {}
 
   private configureDefaultLookupOptions(): PipelineStage[] {
@@ -47,7 +50,7 @@ export class ServicesService {
     }, 0);
   }
 
-  async create(data: CreateServiceDto): Promise<ServiceDocument> {
+  async create(data: CreateServiceDto, userId: string): Promise<ServiceDocument> {
     const { equipmentIds, ...restParams } = data;
 
     if (equipmentIds) {
@@ -55,7 +58,11 @@ export class ServicesService {
       return await this.serviceModel.create({ equipmentIds: ids, ...restParams });
     }
 
-    return await this.serviceModel.create(data);
+    const result = await this.serviceModel.create(data);
+
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "New service was created" });
+
+    return result;
   }
 
   async getAll(params: GetAllServicesDto): Promise<ServiceDocument[]> {
@@ -87,15 +94,21 @@ export class ServicesService {
   }
 
 
-  async updateById(id: string, data: UpdateServiceDto): Promise<ServiceDocument> {
+  async updateById(id: string, data: UpdateServiceDto, userId: string): Promise<ServiceDocument> {
     const { equipmentIds, ...restParams } = data;
 
+    let result: ServiceDocument;
     if (equipmentIds) {
       const ids = equipmentIds.map(item => new Types.ObjectId(item));
-      return await this.serviceModel.findByIdAndUpdate(id, { equipmentIds: ids, ...restParams }, { new: true });
+
+      result = await this.serviceModel.findByIdAndUpdate(id, { equipmentIds: ids, ...restParams }, { new: true });
+    } else {
+      result = await this.serviceModel.findByIdAndUpdate(id, data, { new: true });
     }
 
-    return await this.serviceModel.findByIdAndUpdate(id, data, { new: true });
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "Service was updated" });
+
+    return result;
   }
 
   async findById(id: string): Promise<ServiceDocument> {
@@ -115,8 +128,11 @@ export class ServicesService {
     return await this.serviceModel.findOne(data);
   }
 
-  async deleteById(id: string): Promise<boolean> {
+  async deleteById(id: string, userId: string): Promise<boolean> {
     const result = await this.serviceModel.deleteOne({ _id: id });
+
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "Service was deleted" });
+
     return result.deletedCount !== 0;
   }
 }

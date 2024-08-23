@@ -1,4 +1,4 @@
-import { Body, Controller, Param, Patch, Post } from "@nestjs/common";
+import { Body, Controller, Headers, Param, Patch, Post } from "@nestjs/common";
 import { ApiResponse, ApiTags } from "@nestjs/swagger";
 
 import { UserDocument, UserEntity } from "../../users/schemas";
@@ -13,8 +13,8 @@ export class AuthController {
 
   @Post("/register")
   @ApiResponse({ status: 200 })
-  async register(@Body() body: RegisterDto): Promise<UserDocument> {
-    return await this.authService.create(body);
+  async register(@Headers("User-Id") userId: string, @Body() body: RegisterDto): Promise<UserDocument> {
+    return await this.authService.create(body, userId);
   }
 
   @Post("/login")
@@ -25,7 +25,7 @@ export class AuthController {
 
   @Patch("/change-password/:id")
   @ApiResponse({status: 200, type: UserEntity})
-  async changePassword(@Param("id") id: string, @Body() data: ChangePasswordDto) : Promise<UserDocument> {
-    return await this.authService.changePassword(id, data);
+  async changePassword(@Headers("User-Id") userId: string, @Param("id") id: string, @Body() data: ChangePasswordDto) : Promise<UserDocument> {
+    return await this.authService.changePassword(id, data, userId);
   }
 }

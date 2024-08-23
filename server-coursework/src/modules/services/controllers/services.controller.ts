@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Headers, Param, Patch, Post, Query } from "@nestjs/common";
 import { ApiResponse, ApiTags } from "@nestjs/swagger";
 import { CreateServiceDto, GetAllServicesDto, UpdateServiceDto } from "../dto";
 import { ServiceDocument, ServiceEntity } from "../schemas";
@@ -12,8 +12,8 @@ export class ServicesController {
 
   @Post()
   @ApiResponse({ status: 201, type: ServiceEntity })
-  async create(@Body() data: CreateServiceDto): Promise<ServiceDocument> {
-    return await this.servicesService.create(data);
+  async create(@Headers("User-Id") userId: string, @Body() data: CreateServiceDto): Promise<ServiceDocument> {
+    return await this.servicesService.create(data, userId);
   }
 
   @Get(":id")
@@ -30,13 +30,13 @@ export class ServicesController {
 
   @Patch(":id")
   @ApiResponse({ status: 200, type: ServiceEntity })
-  async updateServices(@Param("id") id: string, @Body() data: UpdateServiceDto): Promise<ServiceDocument> {
-    return await this.servicesService.updateById(id, data);
+  async updateServices(@Headers("User-Id") userId: string, @Param("id") id: string, @Body() data: UpdateServiceDto): Promise<ServiceDocument> {
+    return await this.servicesService.updateById(id, data, userId);
   }
 
   @Delete(":id")
   @ApiResponse({ status: 200 })
-  async deleteById(@Param("id") id: string): Promise<boolean> {
-    return await this.servicesService.deleteById(id);
+  async deleteById(@Headers("User-Id") userId: string, @Param("id") id: string): Promise<boolean> {
+    return await this.servicesService.deleteById(id, userId);
   }
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Headers, Param, Patch, Post, Query } from "@nestjs/common";
 import { ApiResponse, ApiTags } from "@nestjs/swagger";
 import { CreateReceptionDto, GetAllReceptionsDto, GetFreeReceptionsDto, UpdateReceptionDto } from "../dto";
 import { ReceptionDocument, ReceptionEntity } from "../schemas";
@@ -11,8 +11,8 @@ export class ReceptionsController {
 
   @Post()
   @ApiResponse({ status: 201, type: ReceptionEntity })
-  async create(@Body() data: CreateReceptionDto): Promise<ReceptionEntity> {
-    return await this.receptionsService.create(data);
+  async create(@Headers("User-Id") userId: string, @Body() data: CreateReceptionDto): Promise<ReceptionEntity> {
+    return await this.receptionsService.create(data, userId);
   }
 
   @Get("/free")
@@ -35,13 +35,13 @@ export class ReceptionsController {
 
   @Patch(":id")
   @ApiResponse({ status: 200, type: ReceptionEntity })
-  async updateReception(@Param("id") id: string, @Body() data: UpdateReceptionDto): Promise<ReceptionDocument> {
-    return await this.receptionsService.updateById(id, data);
+  async updateReception(@Headers("User-Id") userId: string, @Param("id") id: string, @Body() data: UpdateReceptionDto): Promise<ReceptionDocument> {
+    return await this.receptionsService.updateById(id, data, userId);
   }
 
   @Delete(":id")
   @ApiResponse({ status: 200 })
-  async deleteById(@Param("id") id: string): Promise<boolean> {
-    return await this.receptionsService.deleteById(id);
+  async deleteById(@Headers("User-Id") userId: string, @Param("id") id: string): Promise<boolean> {
+    return await this.receptionsService.deleteById(id, userId);
   }
 }

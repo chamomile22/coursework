@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Query } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Headers, Param, Patch, Query } from "@nestjs/common";
 import { ApiResponse, ApiTags } from "@nestjs/swagger";
 import { GetAllUsersDto, UpdateUserDto } from "../dto";
 import { UserDocument, UserEntity } from "../schemas";
@@ -29,13 +29,13 @@ export class UsersController {
 
   @Patch(":id")
   @ApiResponse({ status: 200, type: UserEntity })
-  async updateUser(@Param("id") id: string, @Body() data: UpdateUserDto): Promise<UserDocument> {
-    return await this.userService.updateById(id, data);
+  async updateUser(@Headers("User-Id") userId: string, @Param("id") id: string, @Body() data: UpdateUserDto): Promise<UserDocument> {
+    return await this.userService.updateById(id, data, userId);
   }
 
   @Delete(":id")
   @ApiResponse({ status: 200 })
-  async deleteById(@Param("id") id: string): Promise<boolean> {
-    return await this.userService.deleteById(id);
+  async deleteById(@Headers("User-Id") userId: string, @Param("id") id: string): Promise<boolean> {
+    return await this.userService.deleteById(id, userId);
   }
 }

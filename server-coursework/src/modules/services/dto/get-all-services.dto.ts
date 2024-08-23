@@ -10,6 +10,8 @@ class GetAllServicesFilter extends BaseFilterDto {
   @IsOptional()
   @Transform(({ value }) => (value ? new Types.ObjectId(value) : undefined))
   departmentId?: Types.ObjectId;
+
+
 }
 
 export class GetAllServicesDto extends SortDto {

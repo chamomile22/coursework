@@ -11,7 +11,7 @@ export class AuthService {
     private readonly usersService: UsersService,
   ) {}
 
-  async create(data: RegisterDto): Promise<UserDocument> {
+  async create(data: RegisterDto, userId): Promise<UserDocument> {
     const { email, phone } = data;
     const userWithPassword = await this.usersService.findOne({ $or: [{ email }, { phone }] });
 
@@ -23,7 +23,7 @@ export class AuthService {
       throw new ServiceException("User with this phone is already created", "ALREADY_EXISTS", "VALIDATION");
     }
 
-    return await this.usersService.create(data);
+    return await this.usersService.create(data, userId);
   }
 
   async login(data: LoginUserBody): Promise<UserDocument> {
@@ -36,7 +36,7 @@ export class AuthService {
     return await this.usersService.findById(userWithPassword.id);
   }
 
-  async changePassword(id: string, data: ChangePasswordDto): Promise<UserDocument> {
+  async changePassword(id: string, data: ChangePasswordDto, userId: string): Promise<UserDocument> {
     const { password, newPassword } = data;
     const userWithPassword = await this.usersService.findOneWithPassword({ _id: id, password });
 
@@ -44,6 +44,6 @@ export class AuthService {
       throw new ServiceException("Password or email is incorrect", "INCORRECT_PASSWORD_OR_EMAIL", "VALIDATION");
     }
 
-    return await this.usersService.updateById(id, { password: newPassword });
+    return await this.usersService.updateById(id, { password: newPassword }, userId);
   }
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Headers, Param, Patch, Post, Query } from "@nestjs/common";
 import { ApiResponse, ApiTags } from "@nestjs/swagger";
 import { CreateEquipmentDto, GetAllEquipmentDto, UpdateEquipmentDto } from "../dto";
 import { EquipmentDocument, EquipmentEntity } from "../schemas";
@@ -11,8 +11,8 @@ export class EquipmentController {
 
   @Post()
   @ApiResponse({ status: 201, type: EquipmentEntity })
-  async create(@Body() data: CreateEquipmentDto): Promise<EquipmentDocument> {
-    return await this.equipmentService.create(data);
+  async create(@Headers("User-Id") userId: string, @Body() data: CreateEquipmentDto): Promise<EquipmentDocument> {
+    return await this.equipmentService.create(data, userId);
   }
 
   @Get(":id")
@@ -29,13 +29,13 @@ export class EquipmentController {
 
   @Patch(":id")
   @ApiResponse({ status: 200, type: EquipmentEntity })
-  async updateEquipment(@Param("id") id: string, @Body() data: UpdateEquipmentDto): Promise<EquipmentDocument> {
-    return await this.equipmentService.updateById(id, data);
+  async updateEquipment(@Headers("User-Id") userId: string, @Param("id") id: string, @Body() data: UpdateEquipmentDto): Promise<EquipmentDocument> {
+    return await this.equipmentService.updateById(id, data, userId);
   }
 
   @Delete(":id")
   @ApiResponse({ status: 200 })
-  async deleteById(@Param("id") id: string): Promise<boolean> {
-    return await this.equipmentService.deleteById(id);
+  async deleteById(@Headers("User-Id") userId: string, @Param("id") id: string): Promise<boolean> {
+    return await this.equipmentService.deleteById(id, userId);
   }
 }
