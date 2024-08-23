@@ -18,7 +18,7 @@ export class DepartmentsService {
   async create(data: CreateDepartmentDto, userId: string): Promise<DepartmentDocument> {
     const result = await this.departmentModel.create(data);
 
-   this.eventEmitter.emit(EventName.EventCreated, { userId, type: "New department was created" });
+    this.eventEmitter.emit(EventName.EventCreated, { userId, type: "New department was created" });
 
     return result;
   }
