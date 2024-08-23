@@ -1,13 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Transform } from "class-transformer";
-import { IsNotEmpty, IsString } from "class-validator";
-import { Types } from "mongoose";
-
+import { IsString } from "class-validator";
 export class CreateEventDto {
   @ApiProperty()
-  @IsNotEmpty()
-  @Transform(({ value }) => (value ? new Types.ObjectId(value) : undefined))
-  userId: Types.ObjectId;
+  @IsString()
+  userId: string;
 
   @ApiProperty()
   @IsString()

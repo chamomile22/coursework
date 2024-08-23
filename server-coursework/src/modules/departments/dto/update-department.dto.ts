@@ -10,5 +10,5 @@ export class UpdateDepartmentDto {
   @ApiPropertyOptional()
   @IsString()
   @IsOptional()
-  description?: number;
+  description?: string;
 }

@@ -5,7 +5,7 @@ import { HydratedDocument, Model, Types } from "mongoose";
 export type EventDocument = HydratedDocument<EventEntity>;
 
 @Schema({
-  collection: "equipment",
+  collection: "events",
   timestamps: true,
 })
 export class EventEntity extends Model {

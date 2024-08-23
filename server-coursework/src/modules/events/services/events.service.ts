@@ -1,7 +1,7 @@
 import { OnEvent } from "@nestjs/event-emitter";
 import { InjectModel } from "@nestjs/mongoose";
 import { DateTime } from "luxon";
-import { FilterQuery, Model } from "mongoose";
+import { FilterQuery, Model, Types } from "mongoose";
 import { EventName } from "../../../common/enums";
 import { CreateEventDto, GetAllEventsDto, UpdateEventDto } from "../dto";
 import { EventDocument, EventEntity } from "../schemas";
@@ -12,9 +12,12 @@ export class EventsService {
     private readonly eventModel: Model<EventEntity>,
   ) {}
 
-  @OnEvent(EventName.EventCreated, { async: true })
+  @OnEvent(EventName.EventCreated)
   async create(data: CreateEventDto): Promise<EventDocument> {
-    return await this.eventModel.create(data);
+    console.log('test')
+    const modifiedData = {...data, userId: new Types.ObjectId(data.userId)}
+
+    return await this.eventModel.create(modifiedData);
   }
 
   async getAll(params: GetAllEventsDto): Promise<EventDocument[]> {

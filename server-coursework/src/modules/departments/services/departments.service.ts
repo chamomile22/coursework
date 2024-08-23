@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
+import { EventEmitter2 } from "@nestjs/event-emitter";
 import { InjectModel } from "@nestjs/mongoose";
 import { FilterQuery, Model } from "mongoose";
+import { EventName } from "../../../common/enums";
 import { CreateDepartmentDto, UpdateDepartmentDto, GetAllDepartmentsDto } from "../dto";
 import { DepartmentDocument, DepartmentEntity } from "../schemas";
 
@@ -10,10 +12,15 @@ export class DepartmentsService {
   constructor(
     @InjectModel(DepartmentEntity.name)
     private readonly departmentModel: Model<DepartmentEntity>,
+    private readonly eventEmitter: EventEmitter2,
   ) {}
 
-  async create(data: CreateDepartmentDto): Promise<DepartmentDocument> {
-    return this.departmentModel.create(data);
+  async create(data: CreateDepartmentDto, userId: string): Promise<DepartmentDocument> {
+    const result = await this.departmentModel.create(data);
+
+   this.eventEmitter.emit(EventName.EventCreated, { userId, type: "New department was created" });
+
+    return result;
   }
 
   async getAll(params: GetAllDepartmentsDto): Promise<DepartmentDocument[]> {
@@ -41,8 +48,12 @@ export class DepartmentsService {
       .sort(sort);
   }
 
-  async updateById(id: string, data: UpdateDepartmentDto): Promise<DepartmentDocument> {
-    return await this.departmentModel.findByIdAndUpdate(id, data, { new: true });
+  async updateById(id: string, data: UpdateDepartmentDto, userId: string): Promise<DepartmentDocument> {
+    const result = await this.departmentModel.findByIdAndUpdate(id, data, { new: true });
+
+    await this.eventEmitter.emitAsync(EventName.EventCreated, { userId, type: "Department was updated" });
+
+    return result;
   }
 
   async findById(id: string): Promise<DepartmentDocument> {
@@ -53,8 +64,11 @@ export class DepartmentsService {
     return await this.departmentModel.findOne(data);
   }
 
-  async deleteById(id: string): Promise<boolean> {
+  async deleteById(id: string, userId: string): Promise<boolean> {
     const result = await this.departmentModel.deleteOne({ _id: id });
+
+    await this.eventEmitter.emitAsync(EventName.EventCreated, { userId, type: "Department was deleted" });
+
     return result.deletedCount !== 0;
   }
 }

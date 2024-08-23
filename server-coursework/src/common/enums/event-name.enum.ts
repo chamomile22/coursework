@@ -1,3 +1,3 @@
 export enum EventName {
-  EventCreated = "event-created",
+  EventCreated = "event.created",
 }
