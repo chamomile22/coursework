@@ -1,9 +1,10 @@
 import { Prop } from "@nestjs/mongoose";
 import { ApiPropertyOptional } from "@nestjs/swagger";
 import { Transform, Type } from "class-transformer";
-import { IsDate, IsNotEmpty, IsObject, IsOptional, IsString } from "class-validator";
+import { IsDate, IsEnum, IsNotEmpty, IsObject, IsOptional, IsString } from "class-validator";
 import { Types } from "mongoose";
 import { BaseFilterDto, SortDto } from "../../../common/abstract";
+import { ReceptionStatus } from "../enums";
 
 class GetAllReceptionsFilter extends BaseFilterDto {
   @ApiPropertyOptional({ name: "filter[patientId]" })
@@ -45,9 +46,9 @@ class GetAllReceptionsFilter extends BaseFilterDto {
   recommendation?: string;
 
   @ApiPropertyOptional({ name: "filter[status]" })
-  @IsString()
+  @IsEnum(ReceptionStatus)
   @IsOptional()
-  status?: string;
+  status?: ReceptionStatus;
 }
 
 export class GetAllReceptionsDto extends SortDto {
