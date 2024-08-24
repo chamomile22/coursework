@@ -1,6 +1,12 @@
 import { Body, Controller, Delete, Get, Headers, Param, Patch, Post, Query } from "@nestjs/common";
 import { ApiResponse, ApiTags } from "@nestjs/swagger";
-import { CreateReceptionDto, GetAllReceptionsDto, GetFreeReceptionsDto, UpdateReceptionDto } from "../dto";
+import {
+  CreateReceptionDto,
+  GetAllReceptionsDto,
+  GetFreeReceptionsDto,
+  ReceptionsCountDto,
+  UpdateReceptionDto,
+} from "../dto";
 import { ReceptionDocument, ReceptionEntity } from "../schemas";
 import { ReceptionsService } from "../services";
 
@@ -19,6 +25,12 @@ export class ReceptionsController {
   @ApiResponse({ status: 200, type: [Date] })
   async getFreeReceptions(@Query() params: GetFreeReceptionsDto): Promise<Date[]> {
     return this.receptionsService.getFreeDates(params.date);
+  }
+
+  @Get("/count")
+  @ApiResponse({ status: 200, type: [Number] })
+  async countReceptions(@Query() params: ReceptionsCountDto): Promise<number[]> {
+    return this.receptionsService.countReceptions(params);
   }
 
   @Get(":id")

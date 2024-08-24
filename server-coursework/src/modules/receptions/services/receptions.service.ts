@@ -7,7 +7,8 @@ import { EventName } from "../../../common/enums";
 import { ServiceException } from "../../../common/exceptions";
 import { ConfigService } from "../../../config";
 import { ServicesService } from "../../services/services";
-import { CreateReceptionDto, UpdateReceptionDto, GetAllReceptionsDto } from "../dto";
+import { CreateReceptionDto, UpdateReceptionDto, GetAllReceptionsDto, ReceptionsCountDto } from "../dto";
+import { ReceptionStatus } from "../enums";
 import { ReceptionDocument, ReceptionEntity } from "../schemas";
 
 @Injectable()
@@ -49,11 +50,16 @@ export class ReceptionsService {
 
     await this.verifyDate(modifiedDate);
 
-    const result = await this.receptionModel.create({ ...data, date: modifiedDate, serviceIds: objectServiceIds, price });
+    const result = await this.receptionModel.create({
+      ...data,
+      date: modifiedDate,
+      serviceIds: objectServiceIds,
+      price,
+    });
 
     this.eventEmitter.emit(EventName.EventCreated, { userId, type: "New reception was created" });
 
-    return result
+    return result;
   }
 
   private generateAggregationPipelines(params: GetAllReceptionsDto): PipelineStage[] {
@@ -192,5 +198,18 @@ export class ReceptionsService {
     this.eventEmitter.emit(EventName.EventCreated, { userId, type: "Reception was deleted" });
 
     return result.deletedCount !== 0;
+  }
+
+  async countReceptions(data: ReceptionsCountDto): Promise<number[]> {
+    const startDate = DateTime.fromJSDate(data.startDate).startOf("day").toJSDate();
+    const endDate = DateTime.fromJSDate(data.endDate).endOf("day").toJSDate();
+
+    const results = await this.receptionModel.aggregate([
+      { $match: { date: { $gte: startDate, $lte: endDate }, status: ReceptionStatus.Done, doctorId: data.doctorId } },
+      { $group: { _id: { $dateToString: { format: "%Y-%m-%d", date: "$date" } }, count: { $sum: 1 } } },
+      { $sort: { _id: 1 } },
+    ]);
+
+    return results.map(item => item.count);
   }
 }

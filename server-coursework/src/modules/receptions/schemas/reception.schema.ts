@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import { HydratedDocument, Model, Types } from "mongoose";
+import { ReceptionStatus } from "../enums";
 
 export type ReceptionDocument = HydratedDocument<ReceptionEntity>;
 
@@ -34,8 +35,8 @@ export class ReceptionEntity extends Model {
   recommendation: string;
 
   @ApiProperty()
-  @Prop({ required: true })
-  status: string;
+  @Prop({ type: String, enum: ReceptionStatus, default: ReceptionStatus.Booked })
+  status: ReceptionStatus;
 
   @ApiProperty()
   @Prop({ required: true })

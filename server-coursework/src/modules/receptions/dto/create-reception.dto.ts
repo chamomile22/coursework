@@ -1,7 +1,8 @@
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import { Transform } from "class-transformer";
-import { IsDate, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsDate, IsEnum, IsNotEmpty, IsOptional, IsString } from "class-validator";
 import { Types } from "mongoose";
+import { ReceptionStatus } from "../enums";
 
 export class CreateReceptionDto {
   @ApiProperty()
@@ -35,6 +36,6 @@ export class CreateReceptionDto {
   recommendation?: string;
 
   @ApiProperty()
-  @IsString()
-  status: string;
+  @IsEnum(ReceptionStatus)
+  status: ReceptionStatus;
 }
